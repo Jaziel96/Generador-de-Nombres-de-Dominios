@@ -1,11 +1,20 @@
-/* eslint-disable */
-import "bootstrap";
-import "./style.css";
+window.addEventListener("DOMContentLoaded", () => {
+  function pagina() {
+    let pronoun = ["the", "our"];
+    let adj = ["great", "big"];
+    let noun = ["jogger", "racoon"];
 
-import "./assets/img/rigo-baby.jpg";
-import "./assets/img/4geeks.ico";
+    let dominio = "";
+    for (let a = 0; a < pronoun.length; a++) {
+      for (let b = 0; b < adj.length; b++) {
+        for (let c = 0; c < noun.length; c++) {
+          dominio =
+            dominio + "<li>" + pronoun[a] + adj[b] + noun[c] + ".com</li>";
+        }
+      }
+    }
+    return dominio;
+  }
 
-window.onload = function() {
-  //write your code here
-  console.log("Hello Rigo from the console!");
-};
+  document.getElementById("dominios").innerHTML = pagina();
+});
